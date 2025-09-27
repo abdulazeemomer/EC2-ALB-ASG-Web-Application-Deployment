@@ -46,13 +46,10 @@ Goals:
 
 ## Architecture Diagram
 
-```
-![Architecture Diagram](./aws3tires.png)
-
-
-```
+<img width="2580" height="1270" alt="aws3tires" src="https://github.com/user-attachments/assets/a0c38d2e-9261-44e6-a337-91e6540d6aad" />
 
 Notes:
+
 
 * Place web-facing ALB in public subnets with listeners on 80/443.
 * EC2 instances should be in private subnets if you want better security (outbound via NAT gateway).
