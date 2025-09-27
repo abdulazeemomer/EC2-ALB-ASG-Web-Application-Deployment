@@ -47,7 +47,7 @@ Goals:
 ## Architecture Diagram
 
 ```
-![aws 3 tires](https://github.com/user-attachments/assets/3bc5a430-8093-4934-b7e0-4f257a869760)
+
 
 ```
 
