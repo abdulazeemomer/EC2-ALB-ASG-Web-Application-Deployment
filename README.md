@@ -22,9 +22,7 @@ This project demonstrates the deployment of a secure, highly available, and scal
    * [Application Load Balancer (ALB) Configuration](#application-load-balancer-alb-configuration)
    * [Optional: RDS Backend (Multi-AZ)](#optional-rds-backend-multi-az)
 7. [Monitoring and Alerts (CloudWatch & SNS)](#monitoring-and-alerts-cloudwatch--sns)
-8. [Cost Optimization Tips](#cost-optimization-tips)
-9. [Security Best Practices](#security-best-practices)
-10. [Testing and Validation](#testing-and-validation)
+8. [Testing and Validation](#testing-and-validation)
 
 ---
 
@@ -74,14 +72,14 @@ Notes:
 
 ## High-Level Deployment Steps
 
-1.Create  a VPC with  2 public subnets and 4 private subnets across 2 AZs.
-2. Create security groups for ALB and EC2 (least-privilege rules).
-3. Create an IAM role for EC2 instances (allow SSM and any necessary permissions).
-4. Prepare an AMI or use a community/official AMI and a user-data script to bootstrap the application.
-5. Create a Launch Template or Launch Configuration for the ASG.
-6. Create an ALB with listeners (HTTP/HTTPS) and target group for EC2 instances.
-7. Create an Auto Scaling Group that spans multiple AZs and attaches to the target group.
-8. Create CloudWatch alarms and SNS topics for notifications.
+1.Creating  a VPC with  2 public subnets and 4 private subnets across 2 AZs.
+2. Creating security groups for ALB and EC2 (least-privilege rules).
+3. Creating an IAM role for EC2 instances (allow SSM and any necessary permissions).
+4. Preparing an AMI or use a community/official AMI and a user-data script to bootstrap the application.
+5. Creating a Launch Template or Launch Configuration for the ASG.
+6. Creating an ALB with listeners (HTTP/HTTPS) and target group for EC2 instances.
+7. Creating an Auto Scaling Group that spans multiple AZs and attaches to the target group.
+8. Creating CloudWatch alarms and SNS topics for notifications.
 9. Configure RDS with Multi-AZ for the database tier.
 
 ---
@@ -154,25 +152,7 @@ systemctl start httpd
   * ASG scale-out events
 * Creating an SNS topic for alarm notifications and subscribe email/Slack webhook.
 * Enabling CloudWatch Logs for application log.
-
----
-
-## Cost Optimization Tips
-
-* **Auto Scaling** to reduce instances during off-peak hours.
-* **SSM Session Manager** to avoid NAT costs for SSH management.
-
-
----
-
-## Security Best Practices
-
-* Use IAM roles for EC2, never embed credentials in AMI or user-data.
-* Use Security Groups to restrict traffic (ALB -> EC2 only).
-* Place DBs in private subnets and restrict access to only app instances.
-* Enable encryption (EBS, RDS storage, S3 at rest) and use KMS CMKs for sensitive data.
-* Perform regular vulnerability scans and enable Amazon Inspector or third-party tools.
-
+  
 ---
 
 ## Testing and Validation
