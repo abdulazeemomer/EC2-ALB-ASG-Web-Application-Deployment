@@ -47,7 +47,7 @@ Goals:
 ## Architecture Diagram
 
 ```
-![rchitecture Diagram](./aws 3 tires.jpeg)
+![rchitecture Diagram](./aws 3 tires.png)
 
 
 ```
