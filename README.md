@@ -47,20 +47,8 @@ Goals:
 ## Architecture Diagram
 
 ```
-Internet
-   |
-Route 53 (optional custom domain)
-   |
-Application Load Balancer (public)
-   |
-  / \    <--- ALB distributes across AZs
-AZ-A  AZ-B
-|      |
-Subnet Subnet (private or public with NAT depending on design)
-|      |
-EC2  EC2 instances (in ASG) - App servers
-|      |
-(optional) RDS Multi-AZ (Private subnets)
+![aws 3 tires](https://github.com/user-attachments/assets/3bc5a430-8093-4934-b7e0-4f257a869760)
+
 ```
 
 Notes:
